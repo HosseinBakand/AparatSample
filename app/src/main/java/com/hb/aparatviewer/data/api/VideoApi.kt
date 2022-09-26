@@ -22,9 +22,9 @@ interface VideoApi {
     cat	int	اختیاری	آیدی طبقه بندی مورد نظر اگر پارامتری تعیین نکنید بطور پیشفرض همه ویدیوهای از طبقه بندی مختلف رو نشان میدهد
     https://www.aparat.com/etc/api/categoryVideos/cat/7/perpage/10
      * */
-    @GET("video/videohash{options}")
+    @GET("categoryVideos{options}")
     fun getCategoryVideos(
-        @Path("options") options: ApiOptions<CategoryOption>,
+        @Path("options") options: ApiOptions,
     ): List<VideoSummary>
 
     /**  videoByUser
@@ -35,38 +35,44 @@ interface VideoApi {
     https://www.aparat.com/etc/api/videoByUser/username/alooty/perpage/10
     خروجی این متد همان داده‌های لیست ویدیو است
      */
-//    @GET("video/videohash{options}")
-//    fun getVideoByUser(
-//        username: String,
-//        perPage: Int? = null
-//    ): List<VideoSummary>
-//
-//    /**    commentByVideos
-//    نظرات یک ویدیو
-//    نام پارامتر	نوع پارامتر	الزام پارامتر	توضیحات پارامتر
-//    videohash	string	اجباری	uid ویدیو مورد نظر
-//    perpage	int	اختیاری	تعداد ویدیوها در صفحه
-//    https://www.aparat.com/etc/api/commentByVideos/videohash/sGNgD/perpage/10
-//    خروجی این متد همان داده‌های لیست کامنت ها است
-//     */
-//
-//    /**    videoBySearch
-//    جستجوی ویدیو
-//    نام پارامتر	نوع پارامتر	الزام پارامتر	توضیحات پارامتر
-//    text	string	اجباری	متن مورد جستجو باید بالای 3حرف و بصورت url_encode فرستاده شود
-//    perpage	int	اختیاری	تعداد ویدیوها در صفحه
-//    https://www.aparat.com/etc/api/videoBySearch/text/perspolis/perpage/10
-//    خروجی این متد همان داده‌های لیست ویدیو است
-//     */
-//    fun getVideoBySearch(
-//        text: String,
-//        perPage: Int? = null
-//    ): List<VideoSummary>
-//
-//    /**    videobytag
-//    لیست ویدیوهای تگ مورد نظر
-//    نام پارامتر	نوع پارامتر	الزام پارامتر	توضیحات پارامتر
-//    text	string	اجباری	نام تگ
-//    https://www.aparat.com/etc/api/videobytag/text/جشنوار*/
-//    fun getVideoByTag(tag: String): List<VideoSummary>
+    @GET("videoByUser/username/{username}{options}")
+    fun getVideoByUser(
+        @Path("username") username: String,
+        @Path("options") options: ApiOptions,
+    ): List<VideoSummary>
+
+
+    /**    commentByVideos
+    نظرات یک ویدیو
+    نام پارامتر	نوع پارامتر	الزام پارامتر	توضیحات پارامتر
+    videohash	string	اجباری	uid ویدیو مورد نظر
+    perpage	int	اختیاری	تعداد ویدیوها در صفحه
+    https://www.aparat.com/etc/api/commentByVideos/videohash/sGNgD/perpage/10
+    خروجی این متد همان داده‌های لیست کامنت ها است
+     */
+
+    /**    videoBySearch
+    جستجوی ویدیو
+    نام پارامتر	نوع پارامتر	الزام پارامتر	توضیحات پارامتر
+    text	string	اجباری	متن مورد جستجو باید بالای 3حرف و بصورت url_encode فرستاده شود
+    perpage	int	اختیاری	تعداد ویدیوها در صفحه
+    https://www.aparat.com/etc/api/videoBySearch/text/perspolis/perpage/10
+    خروجی این متد همان داده‌های لیست ویدیو است
+     */
+    @GET("videoByUser/username/{text}{options}")
+    fun getVideoBySearch(
+        @Path("text") text: String,
+        @Path("options") options: ApiOptions,
+    ): List<VideoSummary>
+
+
+    /**    videobytag
+    لیست ویدیوهای تگ مورد نظر
+    نام پارامتر	نوع پارامتر	الزام پارامتر	توضیحات پارامتر
+    text	string	اجباری	نام تگ
+    https://www.aparat.com/etc/api/videobytag/text/جشنوار*/
+    @GET("videobytag/username/{text}{options}")
+    fun getVideoByTag(
+        @Path("text") tag: String,
+    ): List<VideoSummary>
 }

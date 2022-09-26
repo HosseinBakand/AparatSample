@@ -1,6 +1,6 @@
 package com.hb.aparatviewer.data.api
 
-class ApiOptions<T:ApiOption>(private val params: Map<T, String>) {
+class ApiOptions(private val params: Map<ApiOption, String>) {
     override fun toString(): String {
         val str = StringBuffer()
         params.forEach {
@@ -13,18 +13,17 @@ class ApiOptions<T:ApiOption>(private val params: Map<T, String>) {
     }
 }
 
-abstract class ApiOption(){
+abstract class ApiOption() {
     abstract val key: String
-    abstract val value:String
+    abstract val value: String
     override fun toString(): String = "/$key/$value"
 }
 
-sealed class CategoryOption : ApiOption(){
-    class CATEGORY(override val value: String) : CategoryOption(){
-        override val key: String = "cat"
-    }
-    class PageCount(pageCount : Int) : CategoryOption(){
-        override val key: String = "perpage"
-        override val value: String = "$pageCount"
-    }
+class CATEGORY(override val value: String) : ApiOption() {
+    override val key: String = "cat"
+}
+
+class PageCount(pageCount: Int) : ApiOption() {
+    override val key: String = "perpage"
+    override val value: String = "$pageCount"
 }
