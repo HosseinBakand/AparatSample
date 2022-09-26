@@ -2,10 +2,11 @@
 object Versions {
     //app level
     const val gradle = "4.0.1"
-    const val kotlin = "1.4.0"
 
+    const val kotlin = "1.4.0"
     //libs
     const val coreKtx = "1.7.0"
+
     const val appcompat = "1.5.1"
     const val constraintLayout = "2.0.4"
     const val material = "1.6.1"
@@ -14,6 +15,9 @@ object Versions {
     const val hilt = "2.43.1"
     const val legacy = "1.0.0"
     const val recyclerview = "1.2.1"
+    const val retrofit = "2.9.0"
+    const val okhttp3 = "4.9.3"
+    const val kotlinSerializationConverter = "0.8.0"
 
 
     //test

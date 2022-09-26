@@ -24,6 +24,13 @@ object Dependencies {
     private const val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"
     private const val hiltCompilerKapt = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
 
+    //retrofit
+    private const val retrofit ="com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    private const val retrofitConverterGson ="com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
+    private const val okhttp3LoggingInterceptor ="com.squareup.okhttp3:logging-interceptor:${Versions.okhttp3}"
+    private const val kotlinSerialization ="org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.kotlin}"
+    private const val kotlinSerializationConverter = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:${Versions.kotlinSerializationConverter}"
+
     //test libs
     private const val junit = "junit:junit:${Versions.junit}"
     private const val extJUnit = "androidx.test.ext:junit:${Versions.extJunit}"
@@ -43,6 +50,11 @@ object Dependencies {
         add(legacy)
         add(navigationFragment)
         add(navigationUi)
+        add(retrofit)
+        add(retrofitConverterGson)
+        add(okhttp3LoggingInterceptor)
+        add(kotlinSerialization)
+        add(kotlinSerializationConverter)
     }
 
     val androidTestLibraries = arrayListOf<String>().apply {

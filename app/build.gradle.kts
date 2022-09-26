@@ -22,6 +22,7 @@ android {
         versionName = AppConfig.versionName
 
         testInstrumentationRunner = AppConfig.androidTestInstrumentation
+        buildConfigField("String", "BASE_URL", "\"https://www.aparat.com/etc/api\"")
     }
 
     buildTypes {
@@ -52,7 +53,7 @@ android {
 dependencies {
     //std lib
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-    
+
     //app libs
     implementation(Dependencies.appLibraries)
 
