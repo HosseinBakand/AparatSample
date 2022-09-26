@@ -10,8 +10,8 @@ interface VideoApi {
      * videohash	string	اجباری	uid ویدیو مورد نظر
      *	https://www.aparat.com/etc/api/video/videohash/rzKus
      */
-    @GET("video/videohash/{uid}")
-    fun getVideo(
+    @GET("api/video/videohash/{uid}")
+    suspend fun getVideo(
         @Path("uid") uid: String
     ): VideoDetail
 
@@ -21,8 +21,8 @@ interface VideoApi {
     cat	int	اختیاری	آیدی طبقه بندی مورد نظر اگر پارامتری تعیین نکنید بطور پیشفرض همه ویدیوهای از طبقه بندی مختلف رو نشان میدهد
     https://www.aparat.com/etc/api/categoryVideos/cat/7/perpage/10
      * */
-    @GET("categoryVideos{options}")
-    fun getCategoryVideos(
+    @GET("api/categoryVideos{options}")
+    suspend fun getCategoryVideos(
         @Path("options") options: CategoryOptions,
     ): List<VideoSummary>
 
@@ -34,8 +34,8 @@ interface VideoApi {
     https://www.aparat.com/etc/api/videoByUser/username/alooty/perpage/10
     خروجی این متد همان داده‌های لیست ویدیو است
      */
-    @GET("videoByUser/username/{username}{option}")
-    fun getVideoByUser(
+    @GET("apiapi/videoByUser/username/{username}{option}")
+    suspend fun getVideoByUser(
         @Path("username") username: String,
         @Path("option") option: PageCount,
     ): List<VideoSummary>
@@ -58,8 +58,8 @@ interface VideoApi {
     https://www.aparat.com/etc/api/videoBySearch/text/perspolis/perpage/10
     خروجی این متد همان داده‌های لیست ویدیو است
      */
-    @GET("videoByUser/username/{text}{option}")
-    fun getVideoBySearch(
+    @GET("apiapi/videoByUser/username/{text}{option}")
+    suspend fun getVideoBySearch(
         @Path("text") text: String,
         @Path("option") option: PageCount,
     ): List<VideoSummary>
@@ -70,8 +70,8 @@ interface VideoApi {
     نام پارامتر	نوع پارامتر	الزام پارامتر	توضیحات پارامتر
     text	string	اجباری	نام تگ
     https://www.aparat.com/etc/api/videobytag/text/جشنوار*/
-    @GET("videobytag/username/{text}{options}")
-    fun getVideoByTag(
+    @GET("api/videobytag/username/{text}{options}")
+    suspend fun getVideoByTag(
         @Path("text") tag: String,
     ): List<VideoSummary>
 }

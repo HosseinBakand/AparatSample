@@ -22,7 +22,7 @@ android {
         versionName = AppConfig.versionName
 
         testInstrumentationRunner = AppConfig.androidTestInstrumentation
-        buildConfigField("String", "BASE_URL", "\"https://www.aparat.com/etc/api\"")
+        buildConfigField("String", "BASE_URL", "\"https://www.aparat.com/etc/\"")
     }
 
     buildTypes {
