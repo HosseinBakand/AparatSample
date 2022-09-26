@@ -13,16 +13,22 @@ object Dependencies {
     private const val material = "com.google.android.material:material:${Versions.material}"
     private const val lifecycleLivedata =  "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}"
     private const val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
+    private const val legacy = "androidx.legacy:legacy-support-v4:${Versions.legacy}"
+    private const val recyclerview = "androidx.recyclerview:recyclerview:${Versions.recyclerview}"
 
     //navigation
-    private const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.nav_version}"
-    private const val navigationUi = "androidx.navigation:navigation-ui-ktx:${Versions.nav_version}"
+    private const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
+    private const val navigationUi = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
+
+    //hilt
+    private const val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"
+    private const val hiltCompilerKapt = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
 
     //test libs
     private const val junit = "junit:junit:${Versions.junit}"
     private const val extJUnit = "androidx.test.ext:junit:${Versions.extJunit}"
     private const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espresso}"
-    private const val navigationTesting = "\"androidx.navigation:navigation-testing:${Versions.nav_version}"
+    private const val navigationTesting = "\"androidx.navigation:navigation-testing:${Versions.navigation}"
 
     val appLibraries = arrayListOf<String>().apply {
         add(kotlinStdLib)
@@ -32,9 +38,9 @@ object Dependencies {
         add(material)
         add(lifecycleLivedata)
         add(lifecycleViewModel)
-    }
-
-    val navigation = arrayListOf<String>().apply {
+        add(hilt)
+        add(recyclerview)
+        add(legacy)
         add(navigationFragment)
         add(navigationUi)
     }
@@ -47,6 +53,10 @@ object Dependencies {
 
     val testLibraries = arrayListOf<String>().apply {
         add(junit)
+    }
+
+    val kapt = arrayListOf<String>().apply {
+        add(hiltCompilerKapt)
     }
 }
 

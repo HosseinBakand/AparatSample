@@ -2,6 +2,13 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("androidx.navigation.safeargs")
+    id("dagger.hilt.android.plugin")
+    kotlin("kapt")
+}
+
+// Allow references to generated code
+kapt {
+    correctErrorTypes = true
 }
 
 android {
@@ -45,11 +52,11 @@ android {
 dependencies {
     //std lib
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+    
     //app libs
     implementation(Dependencies.appLibraries)
-    implementation(Dependencies.navigation)
-    implementation("androidx.legacy:legacy-support-v4:1.0.0")
-    implementation("androidx.recyclerview:recyclerview:1.2.1")
+
+    kapt(Dependencies.kapt)
 
     //test libs
     testImplementation(Dependencies.testLibraries)
