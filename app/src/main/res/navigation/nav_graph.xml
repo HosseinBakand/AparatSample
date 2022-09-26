@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/fragment_video_list"
-        android:name="com.hb.aparatviewer.ui.main.videolist.VideoListFragment"
+        android:name="com.hb.aparatviewer.ui.videolist.VideoListFragment"
         android:label="videolist"
         tools:layout="@layout/fragment_video_list" >
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/fragment_video_detail"
-        android:name="com.hb.aparatviewer.ui.main.videodetail.VideoDetailFragment"
+        android:name="com.hb.aparatviewer.ui.videodetail.VideoDetailFragment"
         android:label="@string/hello_blank_fragment"
         tools:layout="@layout/fragment_video_detail" />
 

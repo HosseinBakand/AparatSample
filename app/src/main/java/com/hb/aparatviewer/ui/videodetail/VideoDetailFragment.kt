@@ -1,4 +1,4 @@
-package com.hb.aparatviewer.ui.main.videodetail
+package com.hb.aparatviewer.ui.videodetail
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -1,13 +1,12 @@
-package com.hb.aparatviewer.ui.main.videolist
+package com.hb.aparatviewer.ui.videolist
 
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.navigation.Navigation.findNavController
 import com.hb.aparatviewer.databinding.LayoutVideoItemBinding
 
-import com.hb.aparatviewer.ui.main.videolist.placeholder.PlaceholderContent.PlaceholderItem
+import com.hb.aparatviewer.ui.videolist.placeholder.PlaceholderContent.PlaceholderItem
 
 /**
  * [RecyclerView.Adapter] that can display a [PlaceholderItem].

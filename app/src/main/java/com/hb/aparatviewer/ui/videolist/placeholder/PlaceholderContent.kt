@@ -1,4 +1,4 @@
-package com.hb.aparatviewer.ui.main.videolist.placeholder
+package com.hb.aparatviewer.ui.videolist.placeholder
 
 import java.util.ArrayList
 import java.util.HashMap

@@ -1,4 +1,4 @@
-package com.hb.aparatviewer.ui.main.videolist
+package com.hb.aparatviewer.ui.videolist
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,7 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.hb.aparatviewer.R
-import com.hb.aparatviewer.ui.main.videolist.placeholder.PlaceholderContent
+import com.hb.aparatviewer.ui.videolist.placeholder.PlaceholderContent
 
 class VideoListFragment : Fragment(), VideoItemRecyclerViewAdapter.ItemClickCallback {
 
