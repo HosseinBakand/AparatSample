@@ -2,7 +2,6 @@ package com.hb.aparatviewer.data.api
 
 import com.hb.aparatviewer.domain.model.VideoDetail
 import com.hb.aparatviewer.domain.model.VideoSummary
-import retrofit2.Response
 import retrofit2.http.*
 
 interface VideoApi {
@@ -24,7 +23,7 @@ interface VideoApi {
      * */
     @GET("categoryVideos{options}")
     fun getCategoryVideos(
-        @Path("options") options: ApiOptions,
+        @Path("options") options: CategoryOptions,
     ): List<VideoSummary>
 
     /**  videoByUser
@@ -35,10 +34,10 @@ interface VideoApi {
     https://www.aparat.com/etc/api/videoByUser/username/alooty/perpage/10
     خروجی این متد همان داده‌های لیست ویدیو است
      */
-    @GET("videoByUser/username/{username}{options}")
+    @GET("videoByUser/username/{username}{option}")
     fun getVideoByUser(
         @Path("username") username: String,
-        @Path("options") options: ApiOptions,
+        @Path("option") option: PageCount,
     ): List<VideoSummary>
 
 
@@ -59,10 +58,10 @@ interface VideoApi {
     https://www.aparat.com/etc/api/videoBySearch/text/perspolis/perpage/10
     خروجی این متد همان داده‌های لیست ویدیو است
      */
-    @GET("videoByUser/username/{text}{options}")
+    @GET("videoByUser/username/{text}{option}")
     fun getVideoBySearch(
         @Path("text") text: String,
-        @Path("options") options: ApiOptions,
+        @Path("option") option: PageCount,
     ): List<VideoSummary>
 
 
