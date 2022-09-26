@@ -1,6 +1,7 @@
 import org.gradle.api.artifacts.dsl.DependencyHandler
 
 object Dependencies {
+
     //std lib
     val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
 
@@ -9,6 +10,10 @@ object Dependencies {
     private val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
     private val constraintLayout =
         "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
+    private val material = "com.google.android.material:material:${Versions.material}"
+    private val lifecycleLivedata =  "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}"
+    private val lifecycleViewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
+
 
     //test libs
     private val junit = "junit:junit:${Versions.junit}"
@@ -20,6 +25,9 @@ object Dependencies {
         add(coreKtx)
         add(appcompat)
         add(constraintLayout)
+        add(material)
+        add(lifecycleLivedata)
+        add(lifecycleViewmodel)
     }
 
     val androidTestLibraries = arrayListOf<String>().apply {

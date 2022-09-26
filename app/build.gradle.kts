@@ -4,17 +4,16 @@ plugins {
 }
 
 android {
-    compileSdk = 32
-//    compileSdkVersion(BuildVersions.compileSdk)
+    compileSdk = AppConfig.compileSdk
 
     defaultConfig {
         applicationId = "com.hb.aparatviewer"
-        minSdk = 21
-        targetSdk = 32
-        versionCode = 1
-        versionName = "1.0"
+        minSdk = AppConfig.minSdk
+        targetSdk = AppConfig.targetSdk
+        versionCode = AppConfig.versionCode
+        versionName = AppConfig.versionName
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = AppConfig.androidTestInstrumentation
     }
 
     buildTypes {
@@ -31,17 +30,17 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    viewBinding {
+        android.buildFeatures.viewBinding = true
+    }
 }
 
 dependencies {
-
-    implementation ("androidx.core:core-ktx:1.7.0")
-    implementation ("androidx.appcompat:appcompat:1.5.1")
-    implementation ("com.google.android.material:material:1.6.1")
-    implementation ("androidx.constraintlayout:constraintlayout:2.0.4")
-    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.5.1")
-    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
-    testImplementation ("junit:junit:4.13.2")
-    androidTestImplementation ("androidx.test.ext:junit:1.1.3")
-    androidTestImplementation ("androidx.test.espresso:espresso-core:3.4.0")
+    //std lib
+    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+    //app libs
+    implementation(Dependencies.appLibraries)
+    //test libs
+    testImplementation(Dependencies.testLibraries)
+    androidTestImplementation(Dependencies.androidTestLibraries)
 }
