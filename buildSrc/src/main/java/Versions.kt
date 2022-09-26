@@ -10,6 +10,7 @@ object Versions {
     const val constraintLayout = "2.0.4"
     const val material = "1.6.1"
     const val lifecycle = "2.5.1"
+    const val nav_version = "2.5.2"
 
     //test
     const val junit = "4.13.2"

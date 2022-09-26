@@ -40,6 +40,11 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     //app libs
     implementation(Dependencies.appLibraries)
+    implementation(Dependencies.navigation)
+
+    //todo remove temp dependency - just for download
+    implementation(TempLibraries.list)
+    
     //test libs
     testImplementation(Dependencies.testLibraries)
     androidTestImplementation(Dependencies.androidTestLibraries)
