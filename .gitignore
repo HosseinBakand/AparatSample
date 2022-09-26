@@ -105,3 +105,4 @@ local.properties
 /buildSrc/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab_i.len
 /buildSrc/build/reports/plugin-development/validation-report.txt
 /buildSrc/build/classes/kotlin/main/Versions.class
+/buildSrc/build/classes/kotlin/main/AppConfig.class
