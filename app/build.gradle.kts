@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("androidx.navigation.safeargs")
     id("dagger.hilt.android.plugin")
+    id ("kotlinx-serialization")
     kotlin("kapt")
 }
 
