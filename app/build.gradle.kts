@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("androidx.navigation.safeargs")
     id("dagger.hilt.android.plugin")
+    id ("kotlinx-serialization")
     kotlin("kapt")
 }
 
@@ -22,6 +23,7 @@ android {
         versionName = AppConfig.versionName
 
         testInstrumentationRunner = AppConfig.androidTestInstrumentation
+        buildConfigField("String", "BASE_URL", "\"https://www.aparat.com/etc/\"")
     }
 
     buildTypes {
@@ -52,7 +54,7 @@ android {
 dependencies {
     //std lib
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-    
+
     //app libs
     implementation(Dependencies.appLibraries)
 

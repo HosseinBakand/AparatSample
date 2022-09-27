@@ -10,6 +10,9 @@ buildscript {
         classpath ("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.10")
         classpath("com.google.dagger:hilt-android-gradle-plugin:${Versions.hilt}")
         classpath("androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigation}")
+        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigation}")
+        classpath(kotlin("gradle-plugin", version = Versions.kotlin))
+        classpath(kotlin("serialization", version= Versions.kotlin))
     }
 }
 
