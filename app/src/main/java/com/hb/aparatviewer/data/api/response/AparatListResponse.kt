@@ -14,6 +14,6 @@ data class AparatListResponse(
 
 @Serializable
 data class UI(
-    val pagingForward: String,
-    val pagingBack: String
+    val pagingForward: String? = null,
+    val pagingBack: String? = null
 )
