@@ -4,7 +4,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class VideoDetail(
+data class VideoDetailEntity(
     val id: Int,
     val title: String,
     val username: String,

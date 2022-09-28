@@ -14,49 +14,26 @@ data class VideoSummaryResponse(
     val uid: String,
     val isHidden: Boolean,
     val process: String,
-
     @SerialName("sender_name")
     val senderName: String,
-
     @SerialName("big_poster")
     val bigPoster: String,
-
     @SerialName("small_poster")
     val smallPoster: String,
-
     val profilePhoto: String,
     val duration: Long,
     val sdate: String,
-
     @SerialName("create_date")
     val createDate: String,
-
     @SerialName("sdate_timediff")
     val sdateTimediff: Long,
-
     val frame: String,
     val official: String,
     val autoplay: Boolean,
-
     @SerialName("video_date_status")
     val videoDateStatus: String,
-
     @SerialName("360d")
     val the360D: Boolean,
-
     val deleteurl: String
 )
-//
-//
-//enum class Official(val value: String) {
-//    No("no"),
-//    Yes("yes");
-//
-//    companion object {
-//        public fun fromValue(value: String): Official = when (value) {
-//            "no" -> No
-//            "yes" -> Yes
-//            else -> throw IllegalArgumentException()
-//        }
-//    }
-//}
+

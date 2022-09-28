@@ -1,14 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.videodetail.VideoDetailFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+        <variable
+            name="video_detail"
+            type="com.hb.aparatviewer.domain.model.VideoDetailEntity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context=".ui.videodetail.VideoDetailFragment">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/iv_video_picture"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            app:imagePlaceholder="@{@drawable/im_video_place_holder}"
+            app:imageUrl="@{video_detail.big_poster}"
+            app:layout_constraintDimensionRatio="16:9"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="86dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/background_gradient"
+            app:layout_constraintBottom_toBottomOf="@id/iv_video_picture"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:src="@drawable/background_gradient" />
+
+        <ImageView
+            android:id="@+id/iv_profile_picture"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="16dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="@id/iv_video_picture"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_video_picture"
+            app:profileImagePlaceholder="@{@drawable/ic_profile_place_holder}"
+            app:profileImageUrl="@{video_detail.profilePhoto}"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <TextView
+            android:id="@+id/tv_video_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:maxLines="1"
+            android:text="@{video_detail.title}"
+            android:textAppearance="?textAppearanceHeadline3"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/iv_profile_picture"
+            app:layout_constraintTop_toBottomOf="@id/iv_video_picture"
+            app:layout_constraintBottom_toBottomOf="@id/iv_video_picture"
+            tools:text="@tools:sample/cities" />
+
+        <TextView
+            android:id="@+id/tv_profile_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@{video_detail.username}"
+            android:textAppearance="?textAppearanceCaption"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_profile_picture"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="@tools:sample/full_names" />
+
+
+        <TextView
+            android:id="@+id/tv_view_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="100K"
+            android:textAppearance="?textAppearanceCaption"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_profile_name"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="@tools:sample/us_zipcodes" />
+
+        <TextView
+            android:id="@+id/tv_added_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="2 hours ago"
+            android:textAppearance="?textAppearanceCaption"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_view_count"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="@tools:sample/date/ddmmyy" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

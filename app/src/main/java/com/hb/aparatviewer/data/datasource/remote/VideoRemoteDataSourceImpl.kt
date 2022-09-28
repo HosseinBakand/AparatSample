@@ -4,7 +4,6 @@ import com.hb.aparatviewer.core.ServerException
 import com.hb.aparatviewer.data.api.VideoApi
 import com.hb.aparatviewer.data.api.response.ServerErrorResponse
 import com.hb.aparatviewer.data.mappers.toVideoSummaryEntity
-import com.hb.aparatviewer.domain.model.VideoDetail
 import com.hb.aparatviewer.domain.model.VideoSummaryEntity
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
