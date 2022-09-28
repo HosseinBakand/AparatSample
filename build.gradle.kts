@@ -1,6 +1,8 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     repositories {
+
+//        maven ( url ="https://maven.neshan.org/artifactory/public-maven" )
         google()
         mavenCentral()
         mavenLocal()
@@ -11,8 +13,10 @@ buildscript {
         classpath("com.google.dagger:hilt-android-gradle-plugin:${Versions.hilt}")
         classpath("androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigation}")
         classpath("androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigation}")
-        classpath(kotlin("gradle-plugin", version = Versions.kotlin))
-        classpath(kotlin("serialization", version= Versions.kotlin))
+        val kotlinVersion = "1.7.10"
+        classpath(kotlin("gradle-plugin", version = kotlinVersion))
+        classpath(kotlin("serialization", version = kotlinVersion))
+//        classpath(kotlin("serialization", version= Versions.kotlin))
     }
 }
 

@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="TextAppearance.Dandelion.Headline1" parent="iran_sans_thin">
+    <style name="TextAppearance.AparatViewer.Headline1" parent="iran_sans_thin">
         <item name="android:textSize">@dimen/text_size_h1</item>
     </style>
-    <style name="TextAppearance.Dandelion.Headline2" parent="iran_sans_thin">
+    <style name="TextAppearance.AparatViewer.Headline2" parent="iran_sans_thin">
         <item name="android:textSize">@dimen/text_size_h2</item>
     </style>
-    <style name="TextAppearance.Dandelion.Headline3" parent="iran_sans_light">
+    <style name="TextAppearance.AparatViewer.Headline3" parent="iran_sans_light">
         <item name="android:textSize">@dimen/text_size_h3</item>
     </style>
-    <style name="TextAppearance.Dandelion.Headline4" parent="iran_sans_light">
+    <style name="TextAppearance.AparatViewer.Headline4" parent="iran_sans_light">
         <item name="android:textSize">@dimen/text_size_h4</item>
     </style>
-    <style name="TextAppearance.Dandelion.Headline5" parent="iran_sans_light">
+    <style name="TextAppearance.AparatViewer.Headline5" parent="iran_sans_light">
         <item name="android:textSize">@dimen/text_size_h5</item>
     </style>
-    <style name="TextAppearance.Dandelion.Headline6" parent="iran_sans_light">
+    <style name="TextAppearance.AparatViewer.Headline6" parent="iran_sans_light">
         <item name="android:textSize">@dimen/text_size_h6</item>
     </style>
 
-    <style name="TextAppearance.Dandelion.Subtitle" parent="iran_sans_light">
+    <style name="TextAppearance.AparatViewer.Subtitle" parent="iran_sans_light">
         <item name="android:textSize">@dimen/text_size_subtitle</item>
     </style>
 
-    <style name="TextAppearance.Dandelion.Body.Bold" parent="iran_sans_medium">
+    <style name="TextAppearance.AparatViewer.Body.Bold" parent="iran_sans_medium">
         <item name="android:textSize">@dimen/text_size_body</item>
     </style>
-    <style name="TextAppearance.Dandelion.Body" parent="iran_sans_light">
+    <style name="TextAppearance.AparatViewer.Body" parent="iran_sans_light">
         <item name="android:textSize">@dimen/text_size_body</item>
     </style>
 
-    <style name="TextAppearance.Dandelion.Caption" parent="iran_sans_light">
+    <style name="TextAppearance.AparatViewer.Caption" parent="iran_sans_light">
         <item name="android:textSize">@dimen/text_size_caption</item>
     </style>
 
-    <style name="TextAppearance.Dandelion.Overline" parent="iran_sans_light">
+    <style name="TextAppearance.AparatViewer.Overline" parent="iran_sans_light">
         <item name="android:textSize">@dimen/text_size_overline</item>
     </style>
 
     <style name="CalendarTextStyle">
-        <item name="dandelionTypeface">@font/iran_sans_light</item>
+        <item name="AparatViewerTypeface">@font/iran_sans_light</item>
     </style>
 </resources>

@@ -3,12 +3,12 @@
     <dimen name="text_size_h1">28dp</dimen>
     <dimen name="text_size_h2">24dp</dimen>
     <dimen name="text_size_h3">20dp</dimen>
-    <dimen name="text_size_h4">18dp</dimen>
+    <dimen name="text_size_h4">12dp</dimen>
     <dimen name="text_size_h5">16dp</dimen>
     <dimen name="text_size_h6">14dp</dimen>
     <dimen name="text_size_subtitle">12dp</dimen>
     <dimen name="text_size_body">10dp</dimen>
-    <dimen name="text_size_caption">9dp</dimen>
+    <dimen name="text_size_caption">10dp</dimen>
     <dimen name="text_size_overline">6dp</dimen>
 
     <dimen name="spacing_large">10dp</dimen>

@@ -32,41 +32,41 @@
     </style>
 
 
-    <style name="TextAppearance.Dandelion.Headline1" parent="barlow_extra_light">
+    <style name="TextAppearance.AparatViewer.Headline1" parent="barlow_extra_light">
         <item name="android:textSize">@dimen/text_size_h1</item>
     </style>
-    <style name="TextAppearance.Dandelion.Headline2" parent="barlow_extra_light">
+    <style name="TextAppearance.AparatViewer.Headline2" parent="barlow_extra_light">
         <item name="android:textSize">@dimen/text_size_h2</item>
     </style>
-    <style name="TextAppearance.Dandelion.Headline3" parent="barlow_semi_bold">
+    <style name="TextAppearance.AparatViewer.Headline3" parent="barlow_semi_bold">
         <item name="android:textSize">@dimen/text_size_h3</item>
     </style>
-    <style name="TextAppearance.Dandelion.Headline4" parent="barlow_regular">
+    <style name="TextAppearance.AparatViewer.Headline4" parent="barlow_regular">
         <item name="android:textSize">@dimen/text_size_h4</item>
     </style>
-    <style name="TextAppearance.Dandelion.Headline5" parent="barlow_regular">
+    <style name="TextAppearance.AparatViewer.Headline5" parent="barlow_regular">
         <item name="android:textSize">@dimen/text_size_h5</item>
     </style>
-    <style name="TextAppearance.Dandelion.Headline6" parent="barlow_regular">
+    <style name="TextAppearance.AparatViewer.Headline6" parent="barlow_regular">
         <item name="android:textSize">@dimen/text_size_h6</item>
     </style>
 
-    <style name="TextAppearance.Dandelion.Subtitle" parent="barlow_regular">
+    <style name="TextAppearance.AparatViewer.Subtitle" parent="barlow_regular">
         <item name="android:textSize">@dimen/text_size_subtitle</item>
     </style>
 
-    <style name="TextAppearance.Dandelion.Body.Bold" parent="barlow_semi_bold">
+    <style name="TextAppearance.AparatViewer.Body.Bold" parent="barlow_semi_bold">
         <item name="android:textSize">@dimen/text_size_body</item>
     </style>
-    <style name="TextAppearance.Dandelion.Body" parent="barlow_regular">
+    <style name="TextAppearance.AparatViewer.Body" parent="barlow_regular">
         <item name="android:textSize">@dimen/text_size_body</item>
     </style>
 
-    <style name="TextAppearance.Dandelion.Caption" parent="barlow_regular">
+    <style name="TextAppearance.AparatViewer.Caption" parent="barlow_regular">
         <item name="android:textSize">@dimen/text_size_caption</item>
     </style>
 
-    <style name="TextAppearance.Dandelion.Overline" parent="barlow_regular">
+    <style name="TextAppearance.AparatViewer.Overline" parent="barlow_regular">
         <item name="android:textSize">@dimen/text_size_overline</item>
     </style>
 </resources>

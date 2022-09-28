@@ -8,57 +8,35 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.hb.aparatviewer.R
+import com.hb.aparatviewer.core.autoCleared
+import com.hb.aparatviewer.databinding.FragmentVideoListBinding
 import com.hb.aparatviewer.ui.videolist.placeholder.PlaceholderContent
 
 class VideoListFragment : Fragment(), VideoItemRecyclerViewAdapter.ItemClickCallback {
 
-    private var columnCount = 1
+    private val viewModel by viewModels<VideoListViewModel>()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        arguments?.let {
-            columnCount = it.getInt(ARG_COLUMN_COUNT)
-        }
-    }
-
+    private var binding by autoCleared<FragmentVideoListBinding>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_video_list, container, false)
-
-        // Set the adapter
-        if (view is RecyclerView) {
-            with(view) {
-                layoutManager = when {
-                    columnCount <= 1 -> LinearLayoutManager(context)
-                    else -> GridLayoutManager(context, columnCount)
-                }
-                adapter = VideoItemRecyclerViewAdapter(
-                    PlaceholderContent.ITEMS,
-                    this@VideoListFragment
-                )
-            }
-        }
-        return view
+    ): View {
+        binding = FragmentVideoListBinding.inflate(layoutInflater, container, false)
+        return binding.root
     }
 
-    companion object {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        // Set the adapter
+        with(binding.rvVideoList) {
+            layoutManager = LinearLayoutManager(context)
 
-        // TODO: Customize parameter argument names
-        const val ARG_COLUMN_COUNT = "column-count"
+            adapter = VideoItemRecyclerViewAdapter(this@VideoListFragment)
 
-        // TODO: Customize parameter initialization
-        @JvmStatic
-        fun newInstance(columnCount: Int) =
-            VideoListFragment().apply {
-                arguments = Bundle().apply {
-                    putInt(ARG_COLUMN_COUNT, columnCount)
-                }
-            }
+        }
     }
 
     override fun onClick() {
