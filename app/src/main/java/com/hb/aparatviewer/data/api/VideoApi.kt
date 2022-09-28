@@ -2,7 +2,6 @@ package com.hb.aparatviewer.data.api
 
 import com.hb.aparatviewer.data.api.response.AparatListResponse
 import com.hb.aparatviewer.data.api.response.AparatVideoResponse
-import com.hb.aparatviewer.domain.model.VideoSummary
 import retrofit2.Response
 import retrofit2.http.*
 

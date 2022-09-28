@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="barlow_extra_light">
+        <item name="fontFamily">@font/barlow_extra_light</item>
+        <item name="android:fontFamily">@font/barlow_extra_light</item>
+    </style>
+    <style name="barlow_semi_bold">
+        <item name="fontFamily">@font/barlow_semi_bold</item>
+        <item name="android:fontFamily">@font/barlow_semi_bold</item>
+    </style>
+    <style name="barlow_regular">
+        <item name="fontFamily">@font/barlow_regular</item>
+        <item name="android:fontFamily">@font/barlow_regular</item>
+    </style>
+    <style name="barlow_medium">
+        <item name="fontFamily">@font/barlow_regular</item>
+        <item name="android:fontFamily">@font/barlow_regular</item>
+    </style>
+
+    <style name="iran_sans_thin">
+        <item name="fontFamily">@font/iran_sans_thin</item>
+        <item name="android:fontFamily">@font/iran_sans_thin</item>
+    </style>
+    <style name="iran_sans_light">
+        <item name="fontFamily">@font/iran_sans_light</item>
+        <item name="android:fontFamily">@font/iran_sans_light</item>
+    </style>
+    <style name="iran_sans_medium">
+        <item name="fontFamily">@font/iran_sans_medium</item>
+        <item name="android:fontFamily">@font/iran_sans_medium</item>
+    </style>
+
+
+    <style name="TextAppearance.AparatViewer.Headline1" parent="barlow_extra_light">
+        <item name="android:textSize">@dimen/text_size_h1</item>
+    </style>
+    <style name="TextAppearance.AparatViewer.Headline2" parent="barlow_extra_light">
+        <item name="android:textSize">@dimen/text_size_h2</item>
+    </style>
+    <style name="TextAppearance.AparatViewer.Headline3" parent="barlow_semi_bold">
+        <item name="android:textSize">@dimen/text_size_h3</item>
+    </style>
+    <style name="TextAppearance.AparatViewer.Headline4" parent="barlow_regular">
+        <item name="android:textSize">@dimen/text_size_h4</item>
+    </style>
+    <style name="TextAppearance.AparatViewer.Headline5" parent="barlow_regular">
+        <item name="android:textSize">@dimen/text_size_h5</item>
+    </style>
+    <style name="TextAppearance.AparatViewer.Headline6" parent="barlow_regular">
+        <item name="android:textSize">@dimen/text_size_h6</item>
+    </style>
+
+    <style name="TextAppearance.AparatViewer.Subtitle" parent="barlow_regular">
+        <item name="android:textSize">@dimen/text_size_subtitle</item>
+    </style>
+
+    <style name="TextAppearance.AparatViewer.Body.Bold" parent="barlow_semi_bold">
+        <item name="android:textSize">@dimen/text_size_body</item>
+    </style>
+    <style name="TextAppearance.AparatViewer.Body" parent="barlow_regular">
+        <item name="android:textSize">@dimen/text_size_body</item>
+    </style>
+
+    <style name="TextAppearance.AparatViewer.Caption" parent="barlow_regular">
+        <item name="android:textSize">@dimen/text_size_caption</item>
+    </style>
+
+    <style name="TextAppearance.AparatViewer.Overline" parent="barlow_regular">
+        <item name="android:textSize">@dimen/text_size_overline</item>
+    </style>
+</resources>

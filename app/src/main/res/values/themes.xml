@@ -1,16 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Theme.AparatViewer" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <!--Base theme, all common styling here-->
+    <style name="Theme.AparatViewer" parent="@style/Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimary">@color/primary_lightest</item>
+        <item name="colorOnPrimary">#000</item>
+        <item name="colorPrimaryVariant">@color/primary_lightest</item>
+        <item name="android:windowBackground">@color/surface_main</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondary">@color/gray_0_white</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorOnSecondary">@color/gray_0_white</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/surface_light</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">?attr/isLightTheme</item>
+
+        <!--Material type attributes-->
+        <item name="textAppearanceHeadline1">@style/TextAppearance.AparatViewer.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.AparatViewer.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.AparatViewer.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.AparatViewer.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.AparatViewer.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.AparatViewer.Headline6</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.AparatViewer.Subtitle</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.AparatViewer.Body</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.AparatViewer.Body.Bold</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.AparatViewer.Caption</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.AparatViewer.Overline</item>
+
+        <!--Platform attributes-->
+        <item name="android:navigationBarColor">@color/primary_darkest</item>
+        <item name="colorSurface">@color/surface_main</item>
+        <item name="subtitleTextColor">@color/text_7_dark</item>
+        <item name="android:textColor">@color/text_7_dark</item>
+        <item name="hintTextColor">@color/text_3</item>
+        <item name="android:textColorSecondary">@color/text_5</item>
+
     </style>
 </resources>
