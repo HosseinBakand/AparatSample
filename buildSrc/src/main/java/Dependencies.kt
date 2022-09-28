@@ -37,6 +37,12 @@ object Dependencies {
     private const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espresso}"
     private const val navigationTesting = "\"androidx.navigation:navigation-testing:${Versions.navigation}"
 
+
+        const val glideCore = "com.github.bumptech.glide:glide:${Versions.glide}"
+        const val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.glide}"
+        const val glideOkHttp = "com.github.bumptech.glide:okhttp3-integration:${Versions.glide}"
+
+
     val appLibraries = arrayListOf<String>().apply {
         add(kotlinStdLib)
         add(coreKtx)
@@ -55,6 +61,9 @@ object Dependencies {
         add(okhttp3LoggingInterceptor)
         add(kotlinSerialization)
         add(kotlinSerializationConverter)
+        add(glideCore)
+        add(glideCompiler)
+        add(glideOkHttp)
     }
 
     val androidTestLibraries = arrayListOf<String>().apply {

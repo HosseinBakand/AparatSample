@@ -1,8 +1,7 @@
-package com.hb.aparatviewer.domain.repository
+package com.hb.aparatviewer.data.datasource.remote
 
-import android.provider.MediaStore
 import com.hb.aparatviewer.domain.model.VideoSummaryEntity
 
-interface VideoRepository {
+interface VideoRemoteDataSource {
     suspend fun getVideos():List<VideoSummaryEntity>
 }

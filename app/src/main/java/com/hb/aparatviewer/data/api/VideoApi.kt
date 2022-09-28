@@ -41,7 +41,7 @@ interface VideoApi {
     https://www.aparat.com/etc/api/videoByUser/username/alooty/perpage/10
     خروجی این متد همان داده‌های لیست ویدیو است
      */
-    @GET("apiapi/videoByUser/username/{username}/perpage/{perpage}")
+    @GET("api/videoByUser/username/{username}/perpage/{perpage}")
     suspend fun getVideoByUser(
         @Path("username") username: String,
         @Path("perpage") perpage: Int,
@@ -65,7 +65,7 @@ interface VideoApi {
     https://www.aparat.com/etc/api/videoBySearch/text/perspolis/perpage/10
     خروجی این متد همان داده‌های لیست ویدیو است
      */
-    @GET("apiapi/videoByUser/username/{text}/perpage/{perpage}")
+    @GET("api/videoByUser/username/{text}/perpage/{perpage}")
     suspend fun getVideoBySearch(
         @Path("text") text: String,
         @Path("perpage") perpage: Int,
