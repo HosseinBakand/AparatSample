@@ -55,6 +55,8 @@ dependencies {
 
     kapt(Dependencies.kapt)
 
+    annotationProcessor(Dependencies.roomCompiler)
+
     //test libs
     testImplementation(Dependencies.testLibraries)
     androidTestImplementation(Dependencies.androidTestLibraries)

@@ -1,10 +1,13 @@
 package com.hb.aparatviewer.domain.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
-@Serializable
+@Entity(tableName = "video_detail")
 data class VideoDetailEntity(
+    @PrimaryKey
     val id: Int,
     val title: String,
     val username: String,

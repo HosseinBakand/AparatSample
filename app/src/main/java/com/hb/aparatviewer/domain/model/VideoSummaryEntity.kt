@@ -1,7 +1,12 @@
 package com.hb.aparatviewer.domain.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
+
+@Entity(tableName = "video_summary")
 data class VideoSummaryEntity(
+    @PrimaryKey
     val id: String,
     val title: String,
     val username: String,

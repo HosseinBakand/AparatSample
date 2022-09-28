@@ -19,6 +19,7 @@ object Versions {
     const val okhttp3 = "4.9.3"
     const val kotlinSerializationConverter = "0.8.0"
     const val glide = "4.13.2"
+    const val room = "2.4.3"
 
     //test
     const val junit = "4.13.2"
