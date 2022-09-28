@@ -29,17 +29,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/im_video_place_holder"
-                tools:src="@tools:sample/backgrounds/scenic" />
+                tools:src="@tools:sample/backgrounds/scenic"
+                app:imagePlaceholder="@{@drawable/im_video_place_holder}"
+                app:imageUrl="@{video_summary.bigPoster}"/>
         </androidx.cardview.widget.CardView>
 
         <ImageView
             android:id="@+id/iv_profile_picture"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginTop="8dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_profile_place_holder"
+            app:profileImagePlaceholder="@{@drawable/ic_profile_place_holder}"
+            app:profileImageUrl="@{video_summary.profilePhoto}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cv_video_picture"
             tools:src="@tools:sample/backgrounds/scenic" />

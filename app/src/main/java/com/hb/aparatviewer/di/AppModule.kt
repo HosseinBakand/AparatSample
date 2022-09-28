@@ -1,4 +1,4 @@
-package com.hb.aparatviewer
+package com.hb.aparatviewer.di
 
 import dagger.Module
 import dagger.Provides

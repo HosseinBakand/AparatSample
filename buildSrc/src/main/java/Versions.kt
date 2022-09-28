@@ -18,7 +18,7 @@ object Versions {
     const val retrofit = "2.9.0"
     const val okhttp3 = "4.9.3"
     const val kotlinSerializationConverter = "0.8.0"
-
+    const val glide = "4.13.2"
 
     //test
     const val junit = "4.13.2"

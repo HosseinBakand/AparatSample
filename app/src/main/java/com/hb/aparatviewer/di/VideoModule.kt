@@ -1,4 +1,4 @@
-package com.hb.aparatviewer.data.di
+package com.hb.aparatviewer.di
 
 import com.hb.aparatviewer.data.api.VideoApi
 import com.hb.aparatviewer.data.datasource.remote.VideoRemoteDataSource
@@ -9,10 +9,8 @@ import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ViewModelComponent
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
-import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)

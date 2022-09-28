@@ -14,8 +14,12 @@
  * limitations under the License.
  */
 
-package com.hb.aparatviewer.core
+package com.hb.aparatviewer.di
 
+import com.hb.aparatviewer.core.DefaultDispatcher
+import com.hb.aparatviewer.core.IoDispatcher
+import com.hb.aparatviewer.core.MainDispatcher
+import com.hb.aparatviewer.core.MainImmediateDispatcher
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
