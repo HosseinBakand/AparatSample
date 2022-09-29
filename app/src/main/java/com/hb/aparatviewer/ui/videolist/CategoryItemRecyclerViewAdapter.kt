@@ -8,26 +8,29 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.hb.aparatviewer.R
+import com.hb.aparatviewer.databinding.LayoutCateoryItemBinding
 import com.hb.aparatviewer.databinding.LayoutVideoItemBinding
-import com.hb.aparatviewer.domain.model.VideoEntity
+import com.hb.aparatviewer.domain.model.Category
+import com.hb.aparatviewer.ui.model.CategoryUiModel
 
-private object MyDiffUtil : DiffUtil.ItemCallback<VideoEntity>() {
-    override fun areItemsTheSame(oldItem: VideoEntity, newItem: VideoEntity) =
-        oldItem.id == newItem.id
+private object CategoryDiffUtil : DiffUtil.ItemCallback<CategoryUiModel>() {
+    override fun areItemsTheSame(oldItem: CategoryUiModel, newItem: CategoryUiModel) =
+        oldItem.category.id == newItem.category.id
 
-    override fun areContentsTheSame(oldItem: VideoEntity, newItem: VideoEntity) = true
+    override fun areContentsTheSame(oldItem: CategoryUiModel, newItem: CategoryUiModel) =
+        oldItem.isSelected == newItem.isSelected
 }
 
-class VideoItemRecyclerViewAdapter(
+class CategoryItemRecyclerViewAdapter(
     private val onClickListener: ItemClickCallback
-) : ListAdapter<VideoEntity, RecyclerView.ViewHolder>(MyDiffUtil) {
+) : ListAdapter<CategoryUiModel, RecyclerView.ViewHolder>(CategoryDiffUtil) {
 
-    lateinit var mbinding: LayoutVideoItemBinding
+    lateinit var mbinding: LayoutCateoryItemBinding
     lateinit var context: Context
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        return  itemViewHolderInflater(inflater, parent)
+        return itemViewHolderInflater(inflater, parent)
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
@@ -35,17 +38,17 @@ class VideoItemRecyclerViewAdapter(
         if (holder is ItemViewHolder) setItemListener(holder, item)
     }
 
-
-    inner class ItemViewHolder(binding: LayoutVideoItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ItemViewHolder(binding: LayoutCateoryItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         val holderBinding = binding
     }
 
-    private fun setItemListener(holder: ItemViewHolder, item: VideoEntity) {
-        holder.holderBinding.videoSummary = item
+
+    private fun setItemListener(holder: ItemViewHolder, item: CategoryUiModel) {
+        holder.holderBinding.category = item
         holder.itemView.tag = item
         holder.itemView.setOnClickListener {
-            onClickListener.onClick()//(item)
-//            it.findNavController().navigate(R.id.action_placesFragment_to_mapFragment)
+            onClickListener.onCategoryClick(item.category)
         }
     }
 
@@ -54,11 +57,11 @@ class VideoItemRecyclerViewAdapter(
         parent: ViewGroup
     ): RecyclerView.ViewHolder {
         context = parent.context
-        mbinding = DataBindingUtil.inflate(inflater, R.layout.layout_video_item, parent, false)
+        mbinding = DataBindingUtil.inflate(inflater, R.layout.layout_cateory_item, parent, false)
         return ItemViewHolder(mbinding)
     }
 
     interface ItemClickCallback {
-        fun onClick()
+        fun onCategoryClick(category: Category)
     }
 }

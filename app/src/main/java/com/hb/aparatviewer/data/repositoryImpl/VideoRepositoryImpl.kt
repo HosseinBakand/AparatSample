@@ -14,10 +14,13 @@ class VideoRepositoryImpl @Inject constructor(
     private val videoLocalDataSource: VideoLocalDataSource
 ) : VideoRepository {
     override suspend fun getVideos(category: Category?): List<VideoEntity> {
-        try {
-            val videos = videoRemoteDataSource.getAllVideos().map { it.toVideoEntity() }
-            videoLocalDataSource.insertVideos(videos)
-        } catch (ignore: UnknownHostException){}
-        return videoLocalDataSource.getAllVideos()
+        val videos = try {
+            videoRemoteDataSource.getAllVideos(category = category).map { it.toVideoEntity() }.also {
+                videoLocalDataSource.insertVideos(it)
+            }
+        } catch (ignore: UnknownHostException) {
+            videoLocalDataSource.getAllVideos()
+        }
+        return videos
     }
 }

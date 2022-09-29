@@ -11,8 +11,9 @@ import javax.inject.Inject
 class GetVideoListUseCase @Inject constructor(
     private val videoRepository: VideoRepository,
     @IoDispatcher val ioDispatcher: CoroutineDispatcher
-) : UseCase<Unit,List<VideoEntity>>(ioDispatcher) {
-    override suspend fun execute(parameters: Unit): List<VideoEntity> {
-        return videoRepository.getVideos(Category.FUNNY)
+) : UseCase<Category, List<VideoEntity>>(ioDispatcher) {
+    override suspend fun execute(parameters: Category): List<VideoEntity> {
+        return if (parameters.id == 1) videoRepository.getVideos()
+        else videoRepository.getVideos(parameters)
     }
 }
