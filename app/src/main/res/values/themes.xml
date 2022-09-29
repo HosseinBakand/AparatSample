@@ -17,16 +17,10 @@
 
         <!--Material type attributes-->
         <item name="textAppearanceHeadline1">@style/TextAppearance.AparatViewer.Headline1</item>
-        <item name="textAppearanceHeadline2">@style/TextAppearance.AparatViewer.Headline2</item>
         <item name="textAppearanceHeadline3">@style/TextAppearance.AparatViewer.Headline3</item>
         <item name="textAppearanceHeadline4">@style/TextAppearance.AparatViewer.Headline4</item>
-        <item name="textAppearanceHeadline5">@style/TextAppearance.AparatViewer.Headline5</item>
-        <item name="textAppearanceHeadline6">@style/TextAppearance.AparatViewer.Headline6</item>
-        <item name="textAppearanceSubtitle1">@style/TextAppearance.AparatViewer.Subtitle</item>
         <item name="textAppearanceBody1">@style/TextAppearance.AparatViewer.Body</item>
-        <item name="textAppearanceBody2">@style/TextAppearance.AparatViewer.Body.Bold</item>
         <item name="textAppearanceCaption">@style/TextAppearance.AparatViewer.Caption</item>
-        <item name="textAppearanceOverline">@style/TextAppearance.AparatViewer.Overline</item>
 
         <!--Platform attributes-->
         <item name="android:navigationBarColor">@color/primary_darkest</item>
@@ -35,6 +29,7 @@
         <item name="android:textColor">@color/text_7_dark</item>
         <item name="hintTextColor">@color/text_3</item>
         <item name="android:textColorSecondary">@color/text_5</item>
+        <item name="android:layoutDirection">rtl</item>
 
     </style>
 </resources>

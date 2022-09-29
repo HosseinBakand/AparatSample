@@ -24,8 +24,8 @@ class VideoListFragment : Fragment(), VideoItemRecyclerViewAdapter.ItemClickCall
     private val viewModel by viewModels<VideoListViewModel>()
 
     private var binding by autoCleared<FragmentVideoListBinding>()
-    private var videoAdapter  by autoCleared< VideoItemRecyclerViewAdapter>()
-    private var categoryAdapter  by autoCleared<CategoryItemRecyclerViewAdapter>()
+    private var videoAdapter by autoCleared<VideoItemRecyclerViewAdapter>()
+    private var categoryAdapter by autoCleared<CategoryItemRecyclerViewAdapter>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -37,28 +37,9 @@ class VideoListFragment : Fragment(), VideoItemRecyclerViewAdapter.ItemClickCall
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initialVideoRecycleView()
+        initialCategoryRecycleView()
         // Set the adapter
-        with(binding.rvVideoList) {
-            layoutManager = LinearLayoutManager(context)
-            videoAdapter = VideoItemRecyclerViewAdapter(this@VideoListFragment)
-            adapter = videoAdapter
-        }
-        viewModel.videos.observe(viewLifecycleOwner) {
-            if (it.succeeded) {
-                videoAdapter.submitList(it.data)
-            } else {
-            }
-        }
-
-        with(binding.rvCategoryList) {
-            layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
-            categoryAdapter = CategoryItemRecyclerViewAdapter(this@VideoListFragment)
-            adapter = categoryAdapter
-        }
-        viewModel.categories.observe(viewLifecycleOwner) {
-            categoryAdapter.submitList(it)
-
-        }
 
         binding.ivSearch.setOnClickListener {
             val action =
@@ -67,9 +48,34 @@ class VideoListFragment : Fragment(), VideoItemRecyclerViewAdapter.ItemClickCall
         }
     }
 
-    override fun onClick() {
+    private fun initialVideoRecycleView() {
+        with(binding.rvVideoList) {
+            layoutManager = LinearLayoutManager(context)
+            videoAdapter = VideoItemRecyclerViewAdapter(this@VideoListFragment)
+            adapter = videoAdapter
+        }
+        viewModel.videos.observe(viewLifecycleOwner) {
+            if (it.succeeded) {
+                videoAdapter.submitList(it.data)
+
+                binding.rvVideoList.scrollToPosition(0)
+            }
+        }
+    }
+    private fun initialCategoryRecycleView() {
+        with(binding.rvCategoryList) {
+            layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
+            categoryAdapter = CategoryItemRecyclerViewAdapter(this@VideoListFragment)
+            adapter = categoryAdapter
+        }
+        viewModel.categories.observe(viewLifecycleOwner) {
+            categoryAdapter.submitList(it)
+        }
+    }
+
+    override fun onClick(videoId: String) {
         val action =
-            VideoListFragmentDirections.actionVideoListFragmentToVideoDetailFragment()
+            VideoListFragmentDirections.actionVideoListFragmentToVideoDetailFragment(videoId)
         findNavController().navigate(action)
     }
 

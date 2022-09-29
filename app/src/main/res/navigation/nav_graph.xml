@@ -12,17 +12,25 @@
         tools:layout="@layout/fragment_video_list" >
         <action
             android:id="@+id/action_videoListFragment_to_videoDetailFragment"
-            app:destination="@id/fragment_video_detail" />
+            app:destination="@id/fragment_video_detail" >
+
+        </action>
         <action
             android:id="@+id/action_videoListFragment_to_searchFragment"
-            app:destination="@id/fragment_search" />
+            app:destination="@id/fragment_search" >
+        </action>
     </fragment>
 
     <fragment
         android:id="@+id/fragment_video_detail"
         android:name="com.hb.aparatviewer.ui.videodetail.VideoDetailFragment"
         android:label="@string/hello_blank_fragment"
-        tools:layout="@layout/fragment_video_detail" />
+        tools:layout="@layout/fragment_video_detail" >
+        <argument
+            android:name="video_id"
+            app:argType="string"
+            android:defaultValue="" />
+    </fragment>
 
     <fragment
         android:id="@+id/fragment_search"

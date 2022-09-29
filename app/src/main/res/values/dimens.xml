@@ -14,21 +14,4 @@
     <dimen name="spacing_large">10dp</dimen>
     <dimen name="spacing_normal">8dp</dimen>
     <dimen name="spacing_micro">4dp</dimen>
-
-    <dimen name="listPreferredItemHeight">16dp</dimen>
-    <dimen name="zero">0dp</dimen>
-
-    <!-- Global elevation -->
-    <dimen name="elevation">2dp</dimen>
-
-    <!-- Global image items -->
-    <dimen name="global_item_image_size">50dp</dimen>
-
-    <!-- Radius -->
-    <dimen name="radius_large">16dp</dimen>
-    <dimen name="radius_normal">8dp</dimen>
-    <dimen name="radius_small">3dp</dimen>
-
-    <!-- Toolbars -->
-    <dimen name="toolbar_inset_start">0dp</dimen>
 </resources>

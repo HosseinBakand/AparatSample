@@ -7,4 +7,6 @@ interface VideoLocalDataSource {
     suspend fun getAllVideos(category: Category? = null):List<VideoEntity>
     suspend fun insertVideos(videos:List<VideoEntity>)
     suspend fun searchVideo(text : String): List<VideoEntity>
+    suspend fun insertVideo(video: VideoEntity)
+    suspend fun getVideo(videoId : String): VideoEntity
 }

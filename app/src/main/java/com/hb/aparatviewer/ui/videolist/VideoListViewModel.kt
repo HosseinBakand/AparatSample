@@ -27,6 +27,11 @@ class VideoListViewModel @Inject constructor(
     val categories: MutableLiveData<List<CategoryUiModel>>
         get() = _categories
 
+    private var _isLoading = MutableLiveData(false)
+    val isLoading: MutableLiveData<Boolean>
+        get() = _isLoading
+
+
 
     init {
         loadPlaces()
