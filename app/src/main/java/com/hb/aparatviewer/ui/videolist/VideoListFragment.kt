@@ -37,7 +37,18 @@ class VideoListFragment : Fragment(), VideoItemRecyclerViewAdapter.ItemClickCall
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initialVideoRecycleView()
+        initialCategoryRecycleView()
         // Set the adapter
+
+        binding.ivSearch.setOnClickListener {
+            val action =
+                VideoListFragmentDirections.actionVideoListFragmentToSearchFragment()
+            findNavController().navigate(action)
+        }
+    }
+
+    private fun initialVideoRecycleView() {
         with(binding.rvVideoList) {
             layoutManager = LinearLayoutManager(context)
             videoAdapter = VideoItemRecyclerViewAdapter(this@VideoListFragment)
@@ -48,10 +59,10 @@ class VideoListFragment : Fragment(), VideoItemRecyclerViewAdapter.ItemClickCall
                 videoAdapter.submitList(it.data)
 
                 binding.rvVideoList.scrollToPosition(0)
-            } else {
             }
         }
-
+    }
+    private fun initialCategoryRecycleView() {
         with(binding.rvCategoryList) {
             layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
             categoryAdapter = CategoryItemRecyclerViewAdapter(this@VideoListFragment)
@@ -59,12 +70,6 @@ class VideoListFragment : Fragment(), VideoItemRecyclerViewAdapter.ItemClickCall
         }
         viewModel.categories.observe(viewLifecycleOwner) {
             categoryAdapter.submitList(it)
-        }
-
-        binding.ivSearch.setOnClickListener {
-            val action =
-                VideoListFragmentDirections.actionVideoListFragmentToSearchFragment()
-            findNavController().navigate(action)
         }
     }
 

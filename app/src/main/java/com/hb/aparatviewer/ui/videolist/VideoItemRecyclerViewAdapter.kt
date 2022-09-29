@@ -43,6 +43,9 @@ class VideoItemRecyclerViewAdapter(
     private fun setItemListener(holder: ItemViewHolder, item: VideoEntity) {
         holder.holderBinding.videoSummary = item
         holder.itemView.tag = item
+        //todo add strings to string.xml
+        holder.holderBinding.tvViewCount.text = item.visit_cnt.toString() + " بازدید "
+        holder.holderBinding.tvAddedDate.text = item.duration.toString() + " ثانیه "
         holder.itemView.setOnClickListener {
             onClickListener.onClick(item.uid)
         }
