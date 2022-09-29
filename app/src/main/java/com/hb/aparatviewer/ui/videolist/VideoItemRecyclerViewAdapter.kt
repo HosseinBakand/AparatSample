@@ -44,7 +44,7 @@ class VideoItemRecyclerViewAdapter(
         holder.holderBinding.videoSummary = item
         holder.itemView.tag = item
         holder.itemView.setOnClickListener {
-            onClickListener.onClick()//(item)
+            onClickListener.onClick(item.uid)//(item)
 //            it.findNavController().navigate(R.id.action_placesFragment_to_mapFragment)
         }
     }
@@ -59,6 +59,6 @@ class VideoItemRecyclerViewAdapter(
     }
 
     interface ItemClickCallback {
-        fun onClick()
+        fun onClick( videoId : String)
     }
 }

@@ -18,9 +18,9 @@
             android:layout_marginBottom="4dp"
             android:background="#fff"
             android:elevation="4dp"
+            android:splitMotionEvents="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:splitMotionEvents="false"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
@@ -39,10 +39,10 @@
                 android:id="@+id/tv_title_place"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:fontFamily="sans-serif-condensed-light"
                 android:gravity="center"
                 android:text="title"
                 android:textAppearance="?textAppearanceHeadline1"
-                android:fontFamily="sans-serif-condensed-light"
                 android:textColor="#000"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -58,8 +58,8 @@
             android:name="com.hb.aparatviewer.ui.main.videolist.VideoListFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layoutManager="LinearLayoutManager"
             android:orientation="horizontal"
+            app:layoutManager="LinearLayoutManager"
             app:layout_constraintTop_toBottomOf="@id/mt_toolbar"
             tools:context=".ui.videolist.VideoListFragment"
             tools:listitem="@layout/layout_cateory_item" />
@@ -75,4 +75,5 @@
             tools:context=".ui.videolist.VideoListFragment"
             tools:listitem="@layout/layout_video_item" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>

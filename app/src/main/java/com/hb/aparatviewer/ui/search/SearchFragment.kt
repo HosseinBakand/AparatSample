@@ -54,7 +54,7 @@ class SearchFragment : Fragment(), VideoItemRecyclerViewAdapter.ItemClickCallbac
 
     }
 
-    override fun onClick() {
+    override fun onClick(videoId : String) {
         TODO("Not yet implemented")
     }
 

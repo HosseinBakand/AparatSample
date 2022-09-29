@@ -22,4 +22,5 @@ data class VideoEntity(
     val cat_id: Int? = null,
     val cat_name: String? = null,
     val like_cnt: Int? = null,
+    val recieveTimeMillis: Long,
 )

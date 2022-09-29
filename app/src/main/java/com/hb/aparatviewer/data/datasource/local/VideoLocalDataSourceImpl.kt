@@ -19,4 +19,12 @@ class VideoLocalDataSourceImpl @Inject constructor(
     override suspend fun searchVideo(text: String): List<VideoEntity> {
         return videoDao.searchDatabase("%$text%")
     }
+
+    override suspend fun insertVideo(video: VideoEntity) {
+        videoDao.insetVideo(video)
+    }
+
+    override suspend fun getVideo(videoId : String): VideoEntity {
+        return videoDao.getVideo(videoId)
+    }
 }
