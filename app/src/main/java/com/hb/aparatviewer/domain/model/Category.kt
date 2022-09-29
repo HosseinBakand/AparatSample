@@ -1,6 +1,12 @@
 package com.hb.aparatviewer.domain.model
 
 enum class Category(val id: Int,val title: String, val imgSrc: String) {
+
+    All(
+        id = 1,
+        title = "همه",
+        imgSrc = ""
+    ),
     GAME(
         id = 22,
         title = "گیم",
