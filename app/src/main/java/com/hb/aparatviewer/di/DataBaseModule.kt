@@ -1,9 +1,9 @@
 package com.hb.aparatviewer.di
 
-import android.app.Application
 import android.content.Context
 import androidx.room.Room
 import com.hb.aparatviewer.data.database.AparatViewerDataBase
+import com.hb.aparatviewer.data.database.VideoDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -29,8 +29,8 @@ object DataBaseModule {
             .fallbackToDestructiveMigration()
             .build()
 
-//    @Singleton
-//    @Provides
-//    fun provideFoodDao(db: AparatViewerDataBase): FoodDao = db.getFoodDao()
+    @Singleton
+    @Provides
+    fun provideFoodDao(db: AparatViewerDataBase): VideoDao = db.getVideoDao()
 
 }

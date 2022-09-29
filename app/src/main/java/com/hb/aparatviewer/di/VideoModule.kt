@@ -1,6 +1,8 @@
 package com.hb.aparatviewer.di
 
 import com.hb.aparatviewer.data.api.VideoApi
+import com.hb.aparatviewer.data.datasource.local.VideoLocalDataSource
+import com.hb.aparatviewer.data.datasource.local.VideoLocalDataSourceImpl
 import com.hb.aparatviewer.data.datasource.remote.VideoRemoteDataSource
 import com.hb.aparatviewer.data.datasource.remote.VideoRemoteDataSourceImpl
 import com.hb.aparatviewer.data.repositoryImpl.VideoRepositoryImpl
@@ -22,8 +24,8 @@ abstract class VideoModule {
     @Binds
     abstract fun bindVideoRemoteDataSource(dataSource: VideoRemoteDataSourceImpl): VideoRemoteDataSource
 
-//    @Binds
-//    abstract fun bindVideoLocalDataSource(dataSource: VideoLocalDataSourceImpl): VideoLocalDataSource
+    @Binds
+    abstract fun bindVideoLocalDataSource(dataSource: VideoLocalDataSourceImpl): VideoLocalDataSource
     companion object {
 
         @Provides

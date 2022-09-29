@@ -6,5 +6,5 @@ import com.hb.aparatviewer.domain.model.VideoEntity
 
 @Database(entities = [VideoEntity::class], version = 1)
 abstract class AparatViewerDataBase : RoomDatabase() {
-//    abstract fun reminderDao(): ReminderDao
+    abstract fun getVideoDao(): VideoDao
 }

@@ -17,6 +17,7 @@
 package com.hb.aparatviewer.core.usecase
 
 
+import android.util.Log
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 
@@ -42,7 +43,7 @@ abstract class UseCase<in P, R>(private val coroutineDispatcher: CoroutineDispat
                 }
             }
         } catch (e: Exception) {
-
+            Log.e("asdgasdg",e.toString())
             Result.Error(e)
         }
     }

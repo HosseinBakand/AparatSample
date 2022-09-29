@@ -4,7 +4,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class AparatCategoryListResponse(
-    val categoryVideos: List<VideoSummaryResponse>,
+    val categoryvideos: List<VideoSummaryResponse>,
     val ui: UI
 )
 @Serializable

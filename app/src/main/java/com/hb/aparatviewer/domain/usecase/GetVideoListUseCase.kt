@@ -2,6 +2,7 @@ package com.hb.aparatviewer.domain.usecase
 
 import com.hb.aparatviewer.core.IoDispatcher
 import com.hb.aparatviewer.core.usecase.UseCase
+import com.hb.aparatviewer.domain.model.Category
 import com.hb.aparatviewer.domain.model.VideoEntity
 import com.hb.aparatviewer.domain.repository.VideoRepository
 import kotlinx.coroutines.CoroutineDispatcher
@@ -12,6 +13,6 @@ class GetVideoListUseCase @Inject constructor(
     @IoDispatcher val ioDispatcher: CoroutineDispatcher
 ) : UseCase<Unit,List<VideoEntity>>(ioDispatcher) {
     override suspend fun execute(parameters: Unit): List<VideoEntity> {
-        return videoRepository.getVideos()
+        return videoRepository.getVideos(Category.FUNNY)
     }
 }
