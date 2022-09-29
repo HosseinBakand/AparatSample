@@ -11,13 +11,10 @@ import javax.inject.Inject
 class MainActivity : AppCompatActivity() {
 
 
-    @Inject
-    lateinit var api:VideoApi
+//    @Inject
+//    lateinit var api:VideoApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        runBlocking {
-            api.getVideoByUser("alooty",10)
-        }
     }
 }

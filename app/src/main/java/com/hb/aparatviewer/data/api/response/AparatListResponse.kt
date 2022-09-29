@@ -3,12 +3,13 @@ package com.hb.aparatviewer.data.api.response
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class AparatListResponse(
-//    val mostviewedvideos: List<VideoSummary>?=null,
-    val videobyuser: List<VideoSummaryResponse>,
-//    val mostviewedvideos3: List<VideoSummary>,
-//    val mostviewedvideos4: List<VideoSummary>,
-//    val mostviewedvideos5: List<VideoSummary>,
+data class AparatCategoryListResponse(
+    val categoryvideos: List<VideoSummaryResponse>,
+    val ui: UI
+)
+@Serializable
+data class AparatSearchListResponse(
+    val categoryVideos: List<VideoSummaryResponse>,
     val ui: UI
 )
 

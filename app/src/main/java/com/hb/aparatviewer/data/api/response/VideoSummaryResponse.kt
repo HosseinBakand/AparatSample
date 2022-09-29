@@ -5,12 +5,12 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class VideoSummaryResponse(
-    val id: String,
+    val id: Int,
     val title: String,
     val username: String,
-    val userid: String,
+    val userid: Int,
     @SerialName("visit_cnt")
-    val visitCnt: Long,
+    val visitCnt: Int,
     val uid: String,
     val isHidden: Boolean,
     val process: String,
@@ -21,7 +21,7 @@ data class VideoSummaryResponse(
     @SerialName("small_poster")
     val smallPoster: String,
     val profilePhoto: String,
-    val duration: Long,
+    val duration: Int,
     val sdate: String,
     @SerialName("create_date")
     val createDate: String,
