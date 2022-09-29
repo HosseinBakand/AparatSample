@@ -5,4 +5,5 @@ import com.hb.aparatviewer.domain.model.VideoEntity
 
 interface VideoRepository {
     suspend fun getVideos(category: Category?=null):List<VideoEntity>
+    suspend fun searchVideos(text : String):List<VideoEntity>
 }

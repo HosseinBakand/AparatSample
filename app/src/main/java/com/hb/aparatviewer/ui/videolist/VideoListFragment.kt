@@ -24,13 +24,14 @@ class VideoListFragment : Fragment(), VideoItemRecyclerViewAdapter.ItemClickCall
     private val viewModel by viewModels<VideoListViewModel>()
 
     private var binding by autoCleared<FragmentVideoListBinding>()
-    private lateinit var videoAdapter: VideoItemRecyclerViewAdapter
-    private lateinit var categoryAdapter: CategoryItemRecyclerViewAdapter
+    private var videoAdapter  by autoCleared< VideoItemRecyclerViewAdapter>()
+    private var categoryAdapter  by autoCleared<CategoryItemRecyclerViewAdapter>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentVideoListBinding.inflate(layoutInflater, container, false)
+        binding.lifecycleOwner = viewLifecycleOwner
         return binding.root
     }
 
@@ -58,11 +59,17 @@ class VideoListFragment : Fragment(), VideoItemRecyclerViewAdapter.ItemClickCall
             categoryAdapter.submitList(it)
 
         }
+
+        binding.ivSearch.setOnClickListener {
+            val action =
+                VideoListFragmentDirections.actionVideoListFragmentToSearchFragment()
+            findNavController().navigate(action)
+        }
     }
 
     override fun onClick() {
         val action =
-            VideoListFragmentDirections.actionBlankFragmentToBlankFragment()
+            VideoListFragmentDirections.actionVideoListFragmentToVideoDetailFragment()
         findNavController().navigate(action)
     }
 

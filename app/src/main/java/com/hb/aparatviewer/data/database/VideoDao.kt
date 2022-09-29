@@ -17,4 +17,7 @@ interface VideoDao {
 
     @Insert(onConflict = REPLACE)
     suspend fun insetVideos(videos : List<VideoEntity>)
+
+    @Query("SELECT * FROM video WHERE title LIKE :searchQuery OR sender_name LIKE :searchQuery")
+    suspend fun searchDatabase(searchQuery: String): List<VideoEntity>
 }

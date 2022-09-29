@@ -28,4 +28,19 @@ class VideoRemoteDataSourceImpl @Inject constructor(
         }
         return response.body()!!.categoryvideos
     }
+
+    override suspend fun searchVideos(text: String): List<VideoSummaryResponse> {
+        val response =
+            videoApi.getVideoBySearch(perpage = 10, text = text)
+        if (!response.isSuccessful) {
+            val errorJson = response.errorBody()?.string()
+            if (errorJson.isNullOrBlank()) {
+                throw HttpException(response)
+            } else {
+                val errorResponse = Json.decodeFromString<ServerErrorResponse>(errorJson)
+                throw ServerException(statusCode = response.code(), response = errorResponse)
+            }
+        }
+        return response.body()!!.videobysearch
+    }
 }

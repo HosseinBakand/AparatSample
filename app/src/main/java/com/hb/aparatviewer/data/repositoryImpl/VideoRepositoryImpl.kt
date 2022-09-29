@@ -23,4 +23,15 @@ class VideoRepositoryImpl @Inject constructor(
         }
         return videos
     }
+
+    override suspend fun searchVideos(text: String): List<VideoEntity> {
+        val videos = try {
+                videoRemoteDataSource.searchVideos(text = text).map { it.toVideoEntity() }.also {
+                    videoLocalDataSource.insertVideos(it)
+                }
+            } catch (ignore: UnknownHostException) {
+            videoLocalDataSource.searchVideo(text)
+        }
+        return videos
+    }
 }
