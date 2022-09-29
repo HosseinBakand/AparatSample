@@ -6,7 +6,7 @@
 
         <variable
             name="video_detail"
-            type="com.hb.aparatviewer.domain.model.VideoDetailEntity" />
+            type="com.hb.aparatviewer.domain.model.VideoEntity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"

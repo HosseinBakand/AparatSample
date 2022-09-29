@@ -9,18 +9,18 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.hb.aparatviewer.R
 import com.hb.aparatviewer.databinding.LayoutVideoItemBinding
-import com.hb.aparatviewer.domain.model.VideoSummaryEntity
+import com.hb.aparatviewer.domain.model.VideoEntity
 
-private object MyDiffUtil : DiffUtil.ItemCallback<VideoSummaryEntity>() {
-    override fun areItemsTheSame(oldItem: VideoSummaryEntity, newItem: VideoSummaryEntity) =
+private object MyDiffUtil : DiffUtil.ItemCallback<VideoEntity>() {
+    override fun areItemsTheSame(oldItem: VideoEntity, newItem: VideoEntity) =
         oldItem.id == newItem.id
 
-    override fun areContentsTheSame(oldItem: VideoSummaryEntity, newItem: VideoSummaryEntity) = true
+    override fun areContentsTheSame(oldItem: VideoEntity, newItem: VideoEntity) = true
 }
 
 class VideoItemRecyclerViewAdapter(
     private val onClickListener: ItemClickCallback
-) : ListAdapter<VideoSummaryEntity, RecyclerView.ViewHolder>(MyDiffUtil) {
+) : ListAdapter<VideoEntity, RecyclerView.ViewHolder>(MyDiffUtil) {
 
     lateinit var mbinding: LayoutVideoItemBinding
     lateinit var context: Context
@@ -49,7 +49,7 @@ class VideoItemRecyclerViewAdapter(
 
 //    inner class LoadingViewHolder(loading: View) : RecyclerView.ViewHolder(loading)
 
-    private fun setItemListener(holder: ItemViewHolder, item: VideoSummaryEntity) {
+    private fun setItemListener(holder: ItemViewHolder, item: VideoEntity) {
         holder.holderBinding.videoSummary = item
         holder.itemView.tag = item
         holder.itemView.setOnClickListener {

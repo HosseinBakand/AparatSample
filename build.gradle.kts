@@ -2,7 +2,7 @@
 buildscript {
     repositories {
 
-//        maven ( url ="https://maven.neshan.org/artifactory/public-maven" )
+        maven ( url ="https://maven.neshan.org/artifactory/public-maven" )
         google()
         mavenCentral()
         mavenLocal()

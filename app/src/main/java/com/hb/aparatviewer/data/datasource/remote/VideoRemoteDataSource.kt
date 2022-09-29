@@ -1,7 +1,7 @@
 package com.hb.aparatviewer.data.datasource.remote
 
-import com.hb.aparatviewer.domain.model.VideoSummaryEntity
+import com.hb.aparatviewer.data.api.response.VideoSummaryResponse
 
 interface VideoRemoteDataSource {
-    suspend fun getVideos():List<VideoSummaryEntity>
+    suspend fun getVideos():List<VideoSummaryResponse>
 }

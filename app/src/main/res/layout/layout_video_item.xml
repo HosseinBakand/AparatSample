@@ -5,7 +5,7 @@
     <data>
         <variable
             name="video_summary"
-            type="com.hb.aparatviewer.domain.model.VideoSummaryEntity" />
+            type="com.hb.aparatviewer.domain.model.VideoEntity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -31,7 +31,7 @@
                 android:scaleType="centerCrop"
                 tools:src="@tools:sample/backgrounds/scenic"
                 app:imagePlaceholder="@{@drawable/im_video_place_holder}"
-                app:imageUrl="@{video_summary.bigPoster}"/>
+                app:imageUrl="@{video_summary.big_poster}"/>
         </androidx.cardview.widget.CardView>
 
         <ImageView
