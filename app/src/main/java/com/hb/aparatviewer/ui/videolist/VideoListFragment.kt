@@ -46,6 +46,8 @@ class VideoListFragment : Fragment(), VideoItemRecyclerViewAdapter.ItemClickCall
         viewModel.videos.observe(viewLifecycleOwner) {
             if (it.succeeded) {
                 videoAdapter.submitList(it.data)
+
+                binding.rvVideoList.scrollToPosition(0)
             } else {
             }
         }

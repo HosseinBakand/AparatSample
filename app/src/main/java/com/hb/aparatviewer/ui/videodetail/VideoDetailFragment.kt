@@ -40,6 +40,7 @@ class VideoDetailFragment : Fragment() {
             } else {
             }
         }
+        binding.tvVideoTitle.isSelected = true;
     }
 
 }

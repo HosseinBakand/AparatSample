@@ -44,8 +44,7 @@ class VideoItemRecyclerViewAdapter(
         holder.holderBinding.videoSummary = item
         holder.itemView.tag = item
         holder.itemView.setOnClickListener {
-            onClickListener.onClick(item.uid)//(item)
-//            it.findNavController().navigate(R.id.action_placesFragment_to_mapFragment)
+            onClickListener.onClick(item.uid)
         }
     }
 
@@ -55,6 +54,7 @@ class VideoItemRecyclerViewAdapter(
     ): RecyclerView.ViewHolder {
         context = parent.context
         mbinding = DataBindingUtil.inflate(inflater, R.layout.layout_video_item, parent, false)
+        mbinding.tvVideoTitle.isSelected = true;
         return ItemViewHolder(mbinding)
     }
 
