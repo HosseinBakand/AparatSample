@@ -11,13 +11,22 @@
         android:label="videolist"
         tools:layout="@layout/fragment_video_list" >
         <action
-            android:id="@+id/action_blankFragment_to_blankFragment"
+            android:id="@+id/action_videoListFragment_to_videoDetailFragment"
             app:destination="@id/fragment_video_detail" />
+        <action
+            android:id="@+id/action_videoListFragment_to_searchFragment"
+            app:destination="@id/fragment_search" />
     </fragment>
 
     <fragment
         android:id="@+id/fragment_video_detail"
         android:name="com.hb.aparatviewer.ui.videodetail.VideoDetailFragment"
+        android:label="@string/hello_blank_fragment"
+        tools:layout="@layout/fragment_video_detail" />
+
+    <fragment
+        android:id="@+id/fragment_search"
+        android:name="com.hb.aparatviewer.ui.search.SearchFragment"
         android:label="@string/hello_blank_fragment"
         tools:layout="@layout/fragment_video_detail" />
 

@@ -5,4 +5,5 @@ import com.hb.aparatviewer.domain.model.Category
 
 interface VideoRemoteDataSource {
     suspend fun getAllVideos(category: Category?=null):List<VideoSummaryResponse>
+    suspend fun searchVideos(text: String): List<VideoSummaryResponse>
 }

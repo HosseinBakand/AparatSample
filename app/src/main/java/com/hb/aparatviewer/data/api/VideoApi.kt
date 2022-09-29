@@ -1,6 +1,7 @@
 package com.hb.aparatviewer.data.api
 
 import com.hb.aparatviewer.data.api.response.AparatCategoryListResponse
+import com.hb.aparatviewer.data.api.response.AparatSearchListResponse
 import com.hb.aparatviewer.data.api.response.AparatVideoResponse
 import retrofit2.Response
 import retrofit2.http.*
@@ -39,11 +40,12 @@ interface VideoApi {
     text	string	اجباری	متن مورد جستجو باید بالای 3حرف و بصورت url_encode فرستاده شود
     perpage	int	اختیاری	تعداد ویدیوها در صفحه
     https://www.aparat.com/etc/api/videoBySearch/text/perspolis/perpage/10
+    https://www.aparat.com/etc/api/videoBySearch/prespolis/perpage/10
     خروجی این متد همان داده‌های لیست ویدیو است
      */
-    @GET("api/videoByUser/username/{text}/perpage/{perpage}")
+    @GET("api/videoBySearch/text/{text}/perpage/{perpage}")
     suspend fun getVideoBySearch(
         @Path("text") text: String,
         @Path("perpage") perpage: Int,
-    ): Response<AparatCategoryListResponse>
+    ): Response<AparatSearchListResponse>
 }

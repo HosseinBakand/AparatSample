@@ -9,7 +9,7 @@ data class AparatCategoryListResponse(
 )
 @Serializable
 data class AparatSearchListResponse(
-    val categoryVideos: List<VideoSummaryResponse>,
+    val videobysearch: List<VideoSummaryResponse>,
     val ui: UI
 )
 

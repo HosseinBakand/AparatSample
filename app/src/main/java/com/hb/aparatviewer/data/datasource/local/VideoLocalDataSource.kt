@@ -6,4 +6,5 @@ import com.hb.aparatviewer.domain.model.VideoEntity
 interface VideoLocalDataSource {
     suspend fun getAllVideos(category: Category? = null):List<VideoEntity>
     suspend fun insertVideos(videos:List<VideoEntity>)
+    suspend fun searchVideo(text : String): List<VideoEntity>
 }
